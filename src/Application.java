@@ -1,7 +1,5 @@
 import enums.State;
-import interfaces.CureCat;
-import interfaces.FeedCat;
-import interfaces.PlayCat;
+
 import models.Cat;
 import models.CatsManager;
 import util.Json;
