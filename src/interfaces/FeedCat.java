@@ -17,7 +17,7 @@ public class FeedCat implements Strategy {
                 System.out.printf("%s отравился! Здоровье и настроение упали на %.0f%n", cat.getName(), damage);
             } else {
                 cat.setHungry(cat.getHungry() + 7);
-                cat.setMood((cat.getMood() + 7));
+                cat.setMood(cat.getMood() + 7);
             }
 
         }
@@ -30,7 +30,7 @@ public class FeedCat implements Strategy {
                 System.out.printf("%s отравился! Здоровье и настроение упали на %.0f%n", cat.getName(), damage);
             } else {
                 cat.setHungry(cat.getHungry() + 5);
-                cat.setMood((cat.getMood() + 5));
+                cat.setMood(cat.getMood() + 5);
             }
         }
 
@@ -42,7 +42,7 @@ public class FeedCat implements Strategy {
                 System.out.printf("%s отравился! Здоровье и настроение упали на %.0f%n", cat.getName(), damage);
             } else {
                 cat.setHungry(cat.getHungry() + 4);
-                cat.setMood((cat.getMood() + 4));
+                cat.setMood(cat.getMood() + 4);
             }
         }
 
