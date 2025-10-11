@@ -1,7 +1,6 @@
 package models;
 
 import enums.State;
-import interfaces.Strategy;
 
 public class Cat {
     private String name;
@@ -32,18 +31,6 @@ public class Cat {
         } else {
             System.out.println("Вы уже делали этой действие с " + name + " в этот день.");
         }
-    }
-
-    public void feedCat() {
-
-    }
-
-    public void cureCat() {
-
-    }
-
-    public void playCat() {
-
     }
 
     public double getAverage() {

@@ -20,6 +20,4 @@ public enum State {
     public void changeState(Cat cat) {
         strategy.changeState(cat);
     }
-//    public abstract void cureCat(Cat cat);
-//    public abstract void playCat(Cat cat);
 }
