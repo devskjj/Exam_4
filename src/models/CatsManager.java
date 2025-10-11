@@ -35,11 +35,17 @@ public class CatsManager {
 
     public void nextDay() {
         Random random = new Random();
-        catsList.forEach(cat -> {
+        catsList.removeIf(cat -> {
             cat.setHungry(cat.getHungry() - random.nextDouble(1, 5));
             cat.setMood(cat.getMood() + random.nextDouble(-3, 3));
             cat.setHealth(cat.getHealth() + random.nextDouble(-3, 3));
             cat.setActed(false);
+
+            if (cat.getHealth() <= 0) {
+                System.out.println("Кот " + cat.getName() + " умер.");
+                return true;
+            }
+            return false;
         });
     }
 
