@@ -21,6 +21,7 @@ public class PlayCat implements Strategy {
                 cat.setHungry(cat.getHungry() - 3);
             }
         }
+
         if (cat.getAge() >= 6 && cat.getAge() <= 10) {
             if (random.nextDouble() < 0.1) {
                 double damage = random.nextDouble(20, 40);
@@ -33,6 +34,7 @@ public class PlayCat implements Strategy {
                 cat.setHungry(cat.getHungry() - 5);
             }
         }
+
         if (cat.getAge() >= 11) {
             if (random.nextDouble() < 0.1) {
                 double damage = random.nextDouble(20, 40);
@@ -45,6 +47,7 @@ public class PlayCat implements Strategy {
                 cat.setHungry(cat.getHungry() - 6);
             }
         }
+
         System.out.println("Вы поиграли с " + cat.getName() + ", возраст " + cat.getAge());
     }
 }

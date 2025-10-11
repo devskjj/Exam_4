@@ -8,7 +8,6 @@ public class Cat {
     private double hungry;
     private double mood;
     private double health;
-    private State state;
     private boolean isActed;
 
     public Cat(String name, int age, double hungry, double mood, double health) {
@@ -61,10 +60,6 @@ public class Cat {
 
     public double getHealth() {
         return health;
-    }
-
-    public boolean isActed() {
-        return isActed;
     }
 
     public void setName(String name) {

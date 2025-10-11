@@ -21,6 +21,7 @@ public class FeedCat implements Strategy {
             }
 
         }
+
         if (cat.getAge() >= 6 && cat.getAge() <= 10) {
             if (random.nextDouble() < 0.2) {
                 double damage = random.nextDouble(20, 40);
@@ -32,6 +33,7 @@ public class FeedCat implements Strategy {
                 cat.setMood((cat.getMood() + 5));
             }
         }
+
         if (cat.getAge() >= 11) {
             if (random.nextDouble() < 0.2) {
                 double damage = random.nextDouble(20, 40);
@@ -43,6 +45,7 @@ public class FeedCat implements Strategy {
                 cat.setMood((cat.getMood() + 4));
             }
         }
+
         System.out.println("Вы покормили " + cat.getName() + ", возраст " + cat.getAge());
     }
 }
