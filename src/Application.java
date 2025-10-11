@@ -11,6 +11,10 @@ public class Application {
         List<Cat> catsList = cats.getCatList();
 
         cats.showCatList();
+
+        cats.addCat();
+        cats.showCatList();
+
 //        catsList.forEach(System.out::println);
 //
 //        catsList.sort(Comparator.comparing(Cat::getAverage).reversed());
