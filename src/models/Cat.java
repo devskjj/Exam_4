@@ -1,6 +1,7 @@
 package models;
 
 import enums.State;
+import interfaces.Strategy;
 
 public class Cat {
     private String name;
@@ -34,57 +35,15 @@ public class Cat {
     }
 
     public void feedCat() {
-        if (age >= 1 && age <= 5) {
-            setHungry(hungry + 7);
-            setMood(mood + 7);
-        }
-        if (age >= 6 && age <= 10) {
-            setHungry(hungry + 5);
-            setMood(mood + 5);
-        }
-        if (age >= 11) {
-            setHungry(hungry + 4);
-            setMood(mood + 4);
-        }
-        System.out.println("Вы покормили " + name + ", возраст " + age);
+
     }
 
     public void cureCat() {
-        if (age >= 1 && age <= 5) {
-            setHealth(health + 7);
-            setMood(mood - 3);
-            setHungry(hungry - 3);
-        }
-        if (age >= 6 && age <= 10) {
-            setHealth(health + 5);
-            setMood(mood - 5);
-            setHungry(hungry - 5);
-        }
-        if (age >= 11) {
-            setHealth(health + 4);
-            setMood(mood - 6);
-            setHungry(hungry - 6);
-        }
-        System.out.println("Вы полечили " + name + ", возраст " + age);
+
     }
 
     public void playCat() {
-        if (age >= 1 && age <= 5) {
-            setMood(mood + 7);
-            setHealth(health + 7);
-            setHungry(hungry - 3);
-        }
-        if (age >= 6 && age <= 10) {
-            setMood(mood + 5);
-            setHealth(health + 5);
-            setHungry(hungry - 5);
-        }
-        if (age >= 11) {
-            setMood(mood + 4);
-            setHealth(health + 4);
-            setHungry(hungry - 6);
-        }
-        System.out.println("Вы поиграли с " + name + ", возраст " + age);
+
     }
 
     public double getAverage() {
