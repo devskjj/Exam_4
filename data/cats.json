@@ -1,0 +1,25 @@
+{
+  "catsList": [
+    {
+      "name": "Peach",
+      "age": 11,
+      "hungry": 50,
+      "mood": 86,
+      "health": 78
+    },
+    {
+      "name": "Jasper",
+      "age": 12,
+      "hungry": 43,
+      "mood": 39,
+      "health": 83
+    },
+    {
+      "name": "Poppy",
+      "age": 9,
+      "hungry": 71,
+      "mood": 57,
+      "health": 38
+    }
+  ]
+}
