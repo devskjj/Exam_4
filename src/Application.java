@@ -28,9 +28,9 @@ public class Application {
                     "9 - Завести нового питомца\n" +
                     "0 - Выйти из программы");
             switch (UserInput.getIntInput(0, 9)) {
-                case 1 -> catsList.get(chooseCat(catsList)).act(new FeedCat());
-                case 2 -> catsList.get(chooseCat(catsList)).act(new PlayCat());
-                case 3 -> catsList.get(chooseCat(catsList)).act(new CureCat());
+                case 1 -> catsList.get(chooseCat(catsList)).act(State.FEEDED);
+                case 2 -> catsList.get(chooseCat(catsList)).act(State.PLAYED);
+                case 3 -> catsList.get(chooseCat(catsList)).act(State.CURED);
                 case 4 -> cats.nextDay();
                 case 5 -> cats.selectSort();
                 case 9 -> cats.addCat();
