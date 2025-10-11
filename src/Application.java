@@ -11,7 +11,7 @@ import java.util.Random;
 public class Application {
     public static void runApplication() {
         boolean run = true;
-        Random random = new Random();
+        boolean nextDay = false;
 
         CatsManager cats = Json.read("cats.json");
         List<Cat> catsList = cats.getCatList();
@@ -33,11 +33,7 @@ public class Application {
                 case 1 -> catsList.get(chooseCat(catsList)).act(State.FEEDED);
                 case 2 -> catsList.get(chooseCat(catsList)).act(State.PLAYED);
                 case 3 -> catsList.get(chooseCat(catsList)).act(State.CURED);
-                case 4 -> catsList.forEach(cat -> {
-                            cat.setHungry(cat.getHungry() - random.nextDouble(1, 5));
-                            cat.setMood(cat.getMood() += random.nextDouble(-3, 3));
-                            cat.setHealth(cat.getHealth() += random.nextDouble(-3, 3));
-                        });
+                case 4 -> cats.nextDay();
                 case 9 -> cats.addCat();
                 case 0 -> run = false;
             }

@@ -25,8 +25,12 @@ public class Cat {
     }
 
     public void act(State state) {
-        state.changeState(this);
-        setActed(true);
+        if (!isActed) {
+            state.changeState(this);
+            setActed(true);
+        } else {
+            System.out.println("Вы уже делали этой действие с " + name + " в этот день.");
+        }
     }
 
     public void feedCat() {

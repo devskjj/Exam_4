@@ -32,6 +32,16 @@ public class CatsManager {
         this.catsList.add(cat);
     }
 
+    public void nextDay() {
+        Random random = new Random();
+        catsList.forEach(cat -> {
+            cat.setHungry(cat.getHungry() - random.nextDouble(1, 5));
+            cat.setMood(cat.getMood() + random.nextDouble(-3, 3));
+            cat.setHealth(cat.getHealth() + random.nextDouble(-3, 3));
+            cat.setActed(false);
+        });
+    }
+
     public void showCatList() {
         System.out.printf("| %8s | %7s | %7s | %10s | %7s | %15s |%n", "Имя", "Возраст", "Здоровье", "Настроение", "Сытость", "Средний уровень");
         catsList.stream().sorted(Comparator.comparing(Cat::getAverage).reversed()).forEach(System.out::println);
