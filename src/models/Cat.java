@@ -94,7 +94,7 @@ public class Cat {
     @Override
     public String toString() {
         String actedName = (isActed ? "* " : "") + name;
-        return String.format("| %8s | %7d | %8.0f | %10.0f | %7.0f | %15.0f |", actedName, age, health, mood, hungry, getAverage());
+        return String.format("%8s | %7d | %8.0f | %10.0f | %7.0f | %15.0f |", actedName, age, health, mood, hungry, getAverage());
     }
 
     public String getName() {

@@ -20,13 +20,15 @@ public class Application {
 //
 //        cats.addCat();
 
-        cats.showCatList();
+
         while (run) {
+            cats.showCatList();
             System.out.println("Выберите действие:\n" +
                     "1 - Покормить кота\n" +
                     "2 - Поиграть с котом\n" +
                     "3 - Лечить кота\n" +
                     "4 - Следующий день\n" +
+                    "5 - Сортировать по критериям\n" +
                     "9 - Завести нового питомца\n" +
                     "0 - Выйти из программы");
             switch (UserInput.getIntInput(0, 9)) {
@@ -34,10 +36,11 @@ public class Application {
                 case 2 -> catsList.get(chooseCat(catsList)).act(State.PLAYED);
                 case 3 -> catsList.get(chooseCat(catsList)).act(State.CURED);
                 case 4 -> cats.nextDay();
+                case 5 -> cats.selectSort();
                 case 9 -> cats.addCat();
                 case 0 -> run = false;
             }
-            cats.showCatList();
+//            cats.showCatList();
 
             Json.write("cats.json", cats);
         }

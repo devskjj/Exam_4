@@ -3,25 +3,25 @@
     {
       "name": "Peach",
       "age": 11,
-      "hungry": 42.0,
-      "mood": 98.0,
-      "health": 86.0,
+      "hungry": 78.0,
+      "mood": 96.49472995868346,
+      "health": 81.25760710768077,
       "isActed": false
     },
     {
       "name": "Jasper",
       "age": 12,
-      "hungry": 31.0,
-      "mood": 37.0,
-      "health": 91.0,
+      "hungry": 35.0,
+      "mood": 44.22926600569187,
+      "health": 99.36537337741433,
       "isActed": false
     },
     {
       "name": "Poppy",
       "age": 9,
-      "hungry": 66.0,
-      "mood": 52.0,
-      "health": 43.0,
+      "hungry": 68.0,
+      "mood": 63.403071191588076,
+      "health": 74.73246634864199,
       "isActed": false
     }
   ]
