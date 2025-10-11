@@ -6,10 +6,12 @@ import util.UserInput;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 
 public class Application {
     public static void runApplication() {
         boolean run = true;
+        Random random = new Random();
 
         CatsManager cats = Json.read("cats.json");
         List<Cat> catsList = cats.getCatList();
@@ -24,12 +26,18 @@ public class Application {
                     "1 - Покормить кота\n" +
                     "2 - Поиграть с котом\n" +
                     "3 - Лечить кота\n" +
+                    "4 - Следующий день\n" +
                     "9 - Завести нового питомца\n" +
                     "0 - Выйти из программы");
             switch (UserInput.getIntInput(0, 9)) {
                 case 1 -> catsList.get(chooseCat(catsList)).act(State.FEEDED);
                 case 2 -> catsList.get(chooseCat(catsList)).act(State.PLAYED);
                 case 3 -> catsList.get(chooseCat(catsList)).act(State.CURED);
+                case 4 -> catsList.forEach(cat -> {
+                            cat.setHungry(cat.getHungry() - random.nextDouble(1, 5));
+                            cat.setMood(cat.getMood() += random.nextDouble(-3, 3));
+                            cat.setHealth(cat.getHealth() += random.nextDouble(-3, 3));
+                        });
                 case 9 -> cats.addCat();
                 case 0 -> run = false;
             }
