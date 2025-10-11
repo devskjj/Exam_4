@@ -10,10 +10,11 @@ public class Cat {
 
     public Cat(String name, int age, double hungry, double mood, double health) {
         this.name = name;
-        this.age = age;
-        this.hungry = hungry;
-        this.mood = mood;
-        this.health = health;
+        this.age = Math.max(1, Math.min(18, age));
+        this.hungry = Math.max(0, Math.min(100, hungry));
+        this.mood = Math.max(0, Math.min(100, mood));
+        this.health = Math.max(0, Math.min(100, health));
+        this.isActed = false;
     }
 
     public Cat() {
@@ -26,13 +27,54 @@ public class Cat {
 
     @Override
     public String toString() {
-        return "Cat{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", hungry=" + hungry +
-                ", mood=" + mood +
-                ", health=" + health +
-                ", average=" + getAverage() +
-                '}';
+        return  String.format("| %6S | %7d | %8.0f | %10.0f | %7.0f | %15.0f |", name, age, health, mood, hungry, getAverage());
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getHungry() {
+        return hungry;
+    }
+
+    public double getMood() {
+        return mood;
+    }
+
+    public double getHealth() {
+        return health;
+    }
+
+    public boolean isActed() {
+        return isActed;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setHungry(double hungry) {
+        this.hungry = hungry;
+    }
+
+    public void setMood(double mood) {
+        this.mood = mood;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
+
+    public void setActed(boolean acted) {
+        isActed = acted;
     }
 }

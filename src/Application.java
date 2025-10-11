@@ -8,12 +8,14 @@ import java.util.List;
 public class Application {
     public static void runApplication() {
         CatsManager cats = Json.read("cats.json");
-        List<Cat> catsList = cats.getCatsList();
-        catsList.forEach(System.out::println);
+        List<Cat> catsList = cats.getCatList();
 
-        catsList.sort(Comparator.comparing(Cat::getAverage).reversed());
-
-        catsList.forEach(System.out::println);
+        cats.showCatList();
+//        catsList.forEach(System.out::println);
+//
+//        catsList.sort(Comparator.comparing(Cat::getAverage).reversed());
+//
+//        catsList.forEach(System.out::println);
 
 //        Json.write("cats.json", cats);
     }
