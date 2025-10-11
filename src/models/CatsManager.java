@@ -33,10 +33,8 @@ public class CatsManager {
     }
 
     public void showCatList() {
-        System.out.printf("| %6s | %7s | %7s | %10s | %7s | %15s |%n", "Имя", "Возраст", "Здоровье", "Настроение", "Сытость", "Средний уровень");
-        catsList.stream().sorted(Comparator.comparing(Cat::getAverage).reversed()).forEach(cat -> {
-            System.out.println((cat.isActed() ? "* " : "") + cat);
-        });
+        System.out.printf("| %8s | %7s | %7s | %10s | %7s | %15s |%n", "Имя", "Возраст", "Здоровье", "Настроение", "Сытость", "Средний уровень");
+        catsList.stream().sorted(Comparator.comparing(Cat::getAverage).reversed()).forEach(System.out::println);
     }
 
     public List<Cat> getCatList() {

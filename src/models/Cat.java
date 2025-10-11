@@ -1,11 +1,14 @@
 package models;
 
+import enums.State;
+
 public class Cat {
     private String name;
     private int age;
     private double hungry;
     private double mood;
     private double health;
+    private State state;
     private boolean isActed;
 
     public Cat(String name, int age, double hungry, double mood, double health) {
@@ -21,13 +24,73 @@ public class Cat {
         this.isActed = false;
     }
 
+    public void act(State state) {
+        state.changeState(this);
+        setActed(true);
+    }
+
+    public void feedCat() {
+        if (age >= 1 && age <= 5) {
+            setHungry(hungry + 7);
+            setMood(mood + 7);
+        }
+        if (age >= 6 && age <= 10) {
+            setHungry(hungry + 5);
+            setMood(mood + 5);
+        }
+        if (age >= 11) {
+            setHungry(hungry + 4);
+            setMood(mood + 4);
+        }
+        System.out.println("Вы покормили " + name + ", возраст " + age);
+    }
+
+    public void cureCat() {
+        if (age >= 1 && age <= 5) {
+            setHealth(health + 7);
+            setMood(mood - 3);
+            setHungry(hungry - 3);
+        }
+        if (age >= 6 && age <= 10) {
+            setHealth(health + 5);
+            setMood(mood - 5);
+            setHungry(hungry - 5);
+        }
+        if (age >= 11) {
+            setHealth(health + 4);
+            setMood(mood - 6);
+            setHungry(hungry - 6);
+        }
+        System.out.println("Вы полечили " + name + ", возраст " + age);
+    }
+
+    public void playCat() {
+        if (age >= 1 && age <= 5) {
+            setMood(mood + 7);
+            setHealth(health + 7);
+            setHungry(hungry - 3);
+        }
+        if (age >= 6 && age <= 10) {
+            setMood(mood + 5);
+            setHealth(health + 5);
+            setHungry(hungry - 5);
+        }
+        if (age >= 11) {
+            setMood(mood + 4);
+            setHealth(health + 4);
+            setHungry(hungry - 6);
+        }
+        System.out.println("Вы поиграли с " + name + ", возраст " + age);
+    }
+
     public double getAverage() {
-        return Math.ceil((hungry + mood + health) / 3);
+        return Math.round((hungry + mood + health) / 3);
     }
 
     @Override
     public String toString() {
-        return  String.format("| %6S | %7d | %8.0f | %10.0f | %7.0f | %15.0f |", name, age, health, mood, hungry, getAverage());
+        String actedName = (isActed ? "* " : "") + name;
+        return String.format("| %8s | %7d | %8.0f | %10.0f | %7.0f | %15.0f |", actedName, age, health, mood, hungry, getAverage());
     }
 
     public String getName() {
@@ -63,15 +126,15 @@ public class Cat {
     }
 
     public void setHungry(double hungry) {
-        this.hungry = hungry;
+        this.hungry = Math.max(0, Math.min(100, hungry));
     }
 
     public void setMood(double mood) {
-        this.mood = mood;
+        this.mood = Math.max(0, Math.min(100, mood));
     }
 
     public void setHealth(double health) {
-        this.health = health;
+        this.health = Math.max(0, Math.min(100, health));
     }
 
     public void setActed(boolean acted) {
